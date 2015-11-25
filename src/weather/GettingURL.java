@@ -12,49 +12,61 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Created by mist36 on 2015/11/18.
+ * <p>
+ * URLから情報を取得する。
  */
-public class mainclass {
+public class GettingURL {
 
-    public static void main(String args[]){
+    private String line;
+
+    /**
+     * コンストラクタ
+     */
+    public GettingURL() {
         executeGet();
-
     }
 
-    private static void executeGet(){
+    private void executeGet() {
         System.out.println("========start========");
-        try{
+        try {
             URL url = new URL("http://weather.livedoor.com/forecast/webservice/json/v1?city=130010");
             HttpURLConnection connection = null;
 
-            try{
+            try {
                 connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
 
-                if(connection.getResponseCode() == HttpURLConnection.HTTP_OK)
+                if (connection.getResponseCode() == HttpURLConnection.HTTP_OK)
                     try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8);
 
                          BufferedReader reader = new BufferedReader(isr)) {
-                            String line;
 
-                            while ((line = reader.readLine()) != null){
-                                System.out.println(line);
-                            }
+                        this.line = reader.readLine();
+                        System.out.println(line);
+
                     }
-            }finally{
-                if(connection != null){
+            } finally {
+                if (connection != null) {
                     connection.disconnect();
                 }
             }
-        }catch (MalformedURLException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
-        }catch (ProtocolException e) {
+        } catch (ProtocolException e) {
             e.printStackTrace();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
         System.out.println("========end========");
     }
 
+    public String getLine() {
+        return line;
+    }
+
+    public void setLine(String line) {
+        this.line = line;
+    }
 
 }
