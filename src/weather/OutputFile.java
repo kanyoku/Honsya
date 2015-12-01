@@ -5,15 +5,15 @@ import java.io.*;
 /**
  * Created by mist36 on 2015/11/25.
  *
- * ƒtƒ@ƒCƒ‹‚Ìì¬‚Æ‘‚«‚İ‚ğs‚¤B
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìì¬ï¿½Æï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½sï¿½ï¿½ï¿½B
  */
 public class OutputFile {
 
-    /** URLæ“¾ */
+    /** URLï¿½æ“¾ */
     private static GettingURL gettingURL;
 
     /**
-     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+     * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
      */
     public OutputFile(){
         gettingURL = new GettingURL();
@@ -22,11 +22,11 @@ public class OutputFile {
     }
 
     /**
-     * V‚µ‚¢ƒtƒ@ƒCƒ‹‚ğì¬‚µ‚Ü‚·B
+     * ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
      */
     public void createFile(){
         try {
-            File newFile = new File("C:\\Users\\mist36\\weather.txt");
+            File newFile = new File("C:\\Users\\kanyoku\\weather.txt");
             newFile.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,10 +34,10 @@ public class OutputFile {
     }
 
     /**
-     * ƒtƒ@ƒCƒ‹‚Ö‘‚«‚İ‚Ü‚·B
+     * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Öï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ‚Ü‚ï¿½ï¿½B
      */
     public void fileOutputStream() {
-        String outputFileName = "C:\\Users\\mist36\\weather.txt";
+        String outputFileName = "C:\\Users\\kanyoku\\weather.txt";
         File outputFile = new File(outputFileName);
 
         try{
