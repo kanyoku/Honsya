@@ -30,7 +30,7 @@ public class OutputFile {
             newFile.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
-        } ;
+        }
     }
 
     /**

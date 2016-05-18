@@ -5,15 +5,21 @@ package weather;
  */
 public class run {
 
-    /** URL取得 */
+    /**
+     * URL取得
+     */
     private static OutputFile outputFile;
+
+    /**
+     * ファイル読み込み
+     */
+    private static ReadTextFile readTextFile;
 
     /**
      * コンストラクタ
      */
-    public static void main(String args[]){
+    public static void main(String args[]) {
         outputFile = new OutputFile();
-
+        readTextFile = new ReadTextFile();
     }
-
 }
