@@ -2,9 +2,10 @@ package practice;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 /**
@@ -23,16 +24,25 @@ public class Main extends Application {
             BorderPane root = new BorderPane();
 
             // シーングラフに子ノードを追加する
-            Rectangle r = new Rectangle(10, 20, 100, 200);
-            r.setFill(Color.YELLOW);
-            root.getChildren().add(r);
+//            Rectangle r = new Rectangle(10, 20, 100, 200);
+//            r.setFill(Color.YELLOW);
+//            root.getChildren().add(r);
+
+            TextField text = new TextField("aaaaaa");
+            root.setCenter(text);
+
+            CheckBox check = new CheckBox("Asuka");
+            check.setOnAction((ActionEvent)->{
+                text.setText(check.isSelected()?"LOVE?":"HATE?");
+            });
+            root.setBottom(check);
 
             // シーンを作成
             Scene scene = new Scene(root, 400, 400, Color.BLACK);
 
             // ステージにシーンを登録し、ウィンドウ表示する
             primaryStage.setScene(scene);
-            primaryStage.setTitle("JavaFX Hellow World!");
+            primaryStage.setTitle("Sanjo!");
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
